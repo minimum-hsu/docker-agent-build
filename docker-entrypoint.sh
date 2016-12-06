@@ -6,8 +6,8 @@ if ! [[ -e "/package" && -d "/package" ]] ; then
 fi
 
 git clone -b ${BRANCH} https://${REPO}.git ${GOPATH}/src/${REPO}
-cd ${GOPATH}/src/${REPO}/modules/agent
+cd ${GOPATH}/src/${REPO}/modules/${MODULE}
 go get ./...
 ./control build
 ./control pack
-mv falcon-agent-*.tar.gz /package/
+mv *.tar.gz /package/
